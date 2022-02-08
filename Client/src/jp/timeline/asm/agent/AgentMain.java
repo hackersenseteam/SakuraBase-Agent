@@ -12,7 +12,8 @@ import java.util.*;
 
 public class AgentMain {
     public static final Map<String, MasterTransformer> classList = new HashMap<String, MasterTransformer>() {{
-        //put("ave", new MinecraftTransformer());
+        put("ave", new MinecraftTransformer());
+        put("bda", new PlayerControllerMPTransformer());
         put("pk", new EntityTransformer());
         put("bew", new EntityPlayerSPTransformer());
     }};
@@ -45,30 +46,5 @@ public class AgentMain {
         } catch (Throwable e) {
             e.printStackTrace();
         }
-    }
-
-    private static void saveAsFileWriter(String content) {
-        FileWriter writer = null;
-        try {
-            writer = new FileWriter("C:\\Dumped.txt", true);
-            writer.write(content);
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        } finally {
-            try {
-                if (writer != null)
-                {
-                    writer.flush();
-                    writer.close();
-                }
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
-        }
-    }
-
-    public static void shutdown()
-    {
-        System.out.println("shutdown");
     }
 }
