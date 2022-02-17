@@ -33,8 +33,6 @@ public class Run {
             return;
         }
 
-        //OptionSet finalOptionSet = optionSet;
-
         Optional<VirtualMachineDescriptor> first = VirtualMachine.list()
                 .stream()
                 .filter(vm_desc -> check(vm_desc.displayName()))
@@ -42,14 +40,10 @@ public class Run {
 
         if (!first.isPresent()) {
             System.err.println("Minecraft session wasn't found");
-            ByteBuddyAgent.attach(agent, "8972");
             return;
         }
 
         VirtualMachine attach = VirtualMachine.attach(first.get());
-
-        //ByteBuddyAgent.attach(agent, first.get().id());
-        //System.out.println("SUCCESS!");
 
         try {
             attach.loadAgent(agent.getAbsolutePath());
