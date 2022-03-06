@@ -19,7 +19,7 @@ public class AgentMain {
     }};
 
     public static void premain(String agentArgs, Instrumentation inst) {
-        load(inst);
+        
     }
 
     public static void agentmain(String agentArgs, Instrumentation inst) {
