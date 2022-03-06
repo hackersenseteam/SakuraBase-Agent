@@ -13,12 +13,12 @@ public class EntityTransformer extends MasterTransformer {
 
     @Override
     public CtClass transform(ClassLoader loader, String className, Class<?> classBeingRedefined, CtClass cls) throws Exception {
-        System.out.println("Find Entity Hook");
+        System.out.println("Find Entity");
 
         CtMethod hitbox = cls.getDeclaredMethod("ao");
 
         // this a hitbox
-        hitbox.setBody("return 1.0F;");
+        hitbox.setBody("return 1F;");
 
         return cls;
     }
