@@ -1,7 +1,6 @@
 package jp.timeline.asm.agent;
 
 import jp.timeline.EventSystem.EventManager;
-import jp.timeline.asm.agent.hook.EventHook;
 import jp.timeline.asm.agent.transformer.*;
 
 import javax.swing.*;
@@ -23,13 +22,6 @@ public class AgentMain {
     }
 
     public static void agentmain(String agentArgs, Instrumentation inst) {
-        load(inst);
-    }
-
-    private static void load(Instrumentation inst)
-    {
-        EventManager.addListener(new EventHook());
-
         try {
             System.out.println("Injected");
 
