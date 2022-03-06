@@ -10,10 +10,11 @@ public class PlayerControllerMPTransformer extends MasterTransformer {
 
     @Override
     public CtClass transform(ClassLoader loader, String className, Class<?> classBeingRedefined, CtClass cls) throws Exception {
-        System.out.println("Find PlayerControllerMP Hook");
+        System.out.println("Find PlayerControllerMP");
 
         CtMethod blockReach = cls.getDeclaredMethod("d");
 
+        // this a blockreach
         blockReach.setBody("return 7.0F;");
 
         return cls;
