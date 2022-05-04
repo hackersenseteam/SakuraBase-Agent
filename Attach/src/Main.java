@@ -20,7 +20,6 @@ public class Main {
 
         if (!first.isPresent()) {
             System.err.println("Minecraft session wasn't found");
-            //ByteBuddyAgent.attach(agent, first.get());
             return;
         }
 
